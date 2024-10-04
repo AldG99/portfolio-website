@@ -6,7 +6,7 @@ const App = () => {
     <section>
       <Navbar/>
     </section>
-    <section><a href=''>Hero</a></section>
+    <section><a>Hero</a></section>
     <section>Parallax</section>
     <section>Services</section>
     <section>Pa</section>
