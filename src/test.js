@@ -2,14 +2,13 @@ import { motion } from "framer-motion";
 import { useState } from "react";
 
 const Test = () => {
-
-  const [open, setOpen] = useState(false)
+  const [open, setOpen] = useState(false);
 
   const variants = {
-    visible: (i)=>( {
+    visible: (i) => ({
       opacity: 1,
       x: 100,
-      transition: { delay:i * 0.3 },
+      transition: { delay: i * 0.3 },
     }),
     hidden: { opacity: 0 },
   };
@@ -18,16 +17,21 @@ const Test = () => {
 
   return (
     <div className="course">
-      <motion.ul initial="hidden" animate="visible" variants={variants}>
-        {items.map((item,i) => (
-          <motion.li variants={variants} key={item} custom={i}>
+      <motion.ul initial="hidden" animate="visible">
+        {items.map((item, i) => (
+          <motion.li
+            variants={variants}
+            custom={i}
+            key={item}
+            initial="hidden"
+            animate="visible"
+          >
             {item}
           </motion.li>
         ))}
       </motion.ul>
-      <button onClick={()=>setOpen(prev=>!prev)}>Click</button>
     </div>
-  )
-}
+  );
+};
 
 export default Test;
