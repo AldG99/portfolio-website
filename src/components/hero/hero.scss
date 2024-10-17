@@ -2,6 +2,7 @@
   height: calc(100vh - 100px);
   background: linear-gradient(180deg, #0c0c1d, #111132);
   position: relative;
+  overflow: hidden; // Asegura que el contenido extra no salga del contenedor
 
   .wrapper {
     max-width: 1100px;
@@ -34,7 +35,8 @@
           background-color: transparent;
           color: white;
           margin-right: 20px;
-          cursor: pointer font-weight 300;
+          cursor: pointer;
+          font-weight: 300;
         }
       }
 
@@ -49,6 +51,15 @@
     position: absolute;
     top: 0;
     right: 0;
+    width: 50vw; // Limitar el ancho de la imagen para que no ocupe demasiado espacio
+    z-index: 0; // Asegura que la imagen esté detrás del contenido principal
+    overflow: hidden; // Asegura que el contenedor no cause desbordes
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover; // Ajusta la imagen sin que se distorsione
+    }
   }
 
   .slidingTextContainer {
