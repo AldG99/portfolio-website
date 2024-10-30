@@ -1,3 +1,5 @@
+@import '../../app.scss';
+
 .hero {
   height: calc(100vh - 100px);
   background: linear-gradient(180deg, #0c0c1d, #111132);
@@ -17,6 +19,14 @@
       justify-content: center;
       gap: 40px;
 
+      @include mobile {
+        height: 50%;
+        width: 100%;
+        gap: 20px;
+        align-items: center;
+        text-align: center;
+      }
+
       h2 {
         font-size: 30px;
         color: rebeccapurple;
@@ -25,6 +35,10 @@
 
       h1 {
         font-size: 55px;
+
+        @include mobile {
+          font-size: 36px;
+        }
       }
 
       .buttons {
@@ -54,6 +68,13 @@
     width: 50vw; // Limitar el ancho de la imagen para que no ocupe demasiado espacio
     z-index: 0; // Asegura que la imagen esté detrás del contenido principal
     overflow: hidden; // Asegura que el contenedor no cause desbordes
+
+    @include mobile {
+      height: 50%;
+      width: 100%;
+      top: unset;
+      bottom: 0;
+    }
 
     img {
       width: 100%;
