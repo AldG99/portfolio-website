@@ -6,6 +6,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  padding: 20px;
 
   .textContainer {
     flex: 1;
@@ -59,18 +60,6 @@
         gap: 20px;
       }
 
-      img {
-        width: 300;
-        height: 100px;
-        border-radius: 50px;
-        object-fit: cover;
-
-        @include mobile {
-          width: 200px;
-          height: 50px;
-        }
-      }
-
       h1 {
         font-size: 96px;
         font-weight: 100;
@@ -103,6 +92,7 @@
     display: flex;
     max-width: 1366px;
     margin: auto;
+    gap: 20px;
 
     @include mobile {
       flex-direction: column;
@@ -115,12 +105,26 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      transition: background 0.3s, color 0.3s;
+
+      &:hover {
+        background: lightgray;
+        color: black;
+      }
 
       @include mobile {
         border: none;
         align-items: center;
         gap: 20px;
         padding: 10px;
+      }
+
+      h2 {
+        font-size: 24px;
+        font-weight: bold;
+        @include mobile {
+          font-size: 18px;
+        }
       }
 
       p {
@@ -134,11 +138,11 @@
         background-color: orange;
         border: none;
         cursor: pointer;
+        border-radius: 5px;
 
         @include mobile {
           background-color: transparent;
           border: 1px solid orange;
-          border-radius: 5px;
           color: orange;
           width: 50%;
           padding: 5px;

@@ -14,9 +14,12 @@ const textVariants = {
       staggerChildren: 0.1,
     },
   },
-  scrollButton: {
-    opacity: 0,
-    y: 10,
+};
+
+const scrollButtonVariant = {
+  animate: {
+    opacity: [0, 1, 0],
+    y: [10, -10, 10],
     transition: {
       duration: 2,
       repeat: Infinity,
@@ -25,9 +28,7 @@ const textVariants = {
 };
 
 const sliderVariants = {
-  initial: {
-    x: 0,
-  },
+  initial: { x: 0 },
   animate: {
     x: '-220%',
     transition: {
@@ -59,10 +60,10 @@ const Hero = () => {
             <motion.button variants={textVariants}>Contáctame</motion.button>
           </motion.div>
           <motion.img
-            variants={textVariants}
-            animate="scrollButton"
+            variants={scrollButtonVariant}
+            animate="animate"
             src="/scroll.png"
-            alt=""
+            alt="Scroll Icon"
           />
         </motion.div>
       </div>
@@ -75,7 +76,7 @@ const Hero = () => {
         Escritor Creador de contenido Influenciador
       </motion.div>
       <div className="imageContainer">
-        <img src="/hero.png" alt="" />
+        <img src="/hero.png" alt="Hero Background" />
       </div>
     </div>
   );
